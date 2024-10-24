@@ -7,7 +7,7 @@
 
 #pragma once
 
-#include "Point.h"
+#include <zxing-cpp/Point.h>
 #include "QRECB.h"
 #include "QRErrorCorrectionLevel.h"
 #include "ZXAlgorithms.h"
