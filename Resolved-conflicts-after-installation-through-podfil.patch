@@ -1,0 +1,137 @@
+From 8a689bb5e192ba05dd80a1d2266b00b226a4af01 Mon Sep 17 00:00:00 2001
+From: "GUIEEN(Seungyong Kwak)" <guieenoutis@gmail.com>
+Date: Thu, 24 Oct 2024 16:12:52 +0900
+Subject: [PATCH] Resolved conflicts after installation through podfile
+
+---
+ core/src/Error.cpp                            | 2 +-
+ core/src/datamatrix/DMDetector.cpp            | 2 +-
+ core/src/oned/ODDataBarExpandedBitDecoder.cpp | 2 +-
+ core/src/qrcode/QRCodecMode.cpp               | 2 +-
+ core/src/qrcode/QRVersion.cpp                 | 2 +-
+ core/src/qrcode/QRVersion.h                   | 2 +-
+ test/fuzz/fuzzDBEDecoder.cpp                  | 2 +-
+ test/unit/ErrorTest.cpp                       | 2 +-
+ test/unit/qrcode/QRModeTest.cpp               | 2 +-
+ 9 files changed, 9 insertions(+), 9 deletions(-)
+
+diff --git a/core/src/Error.cpp b/core/src/Error.cpp
+index c46a6c62..82501a8c 100644
+--- a/core/src/Error.cpp
++++ b/core/src/Error.cpp
+@@ -3,7 +3,7 @@
+  */
+ // SPDX-License-Identifier: Apache-2.0
+ 
+-#include "Error.h"
++#include <zxing-cpp/Error.h>
+ 
+ namespace ZXing {
+ 
+diff --git a/core/src/datamatrix/DMDetector.cpp b/core/src/datamatrix/DMDetector.cpp
+index 24e287ed..312d1126 100644
+--- a/core/src/datamatrix/DMDetector.cpp
++++ b/core/src/datamatrix/DMDetector.cpp
+@@ -13,7 +13,7 @@
+ #include "DetectorResult.h"
+ #include "GridSampler.h"
+ #include "LogMatrix.h"
+-#include "Point.h"
++#include <zxing-cpp/Point.h>
+ #include "RegressionLine.h"
+ #include "ResultPoint.h"
+ #include "Scope.h"
+diff --git a/core/src/oned/ODDataBarExpandedBitDecoder.cpp b/core/src/oned/ODDataBarExpandedBitDecoder.cpp
+index 165cd32f..02dcebea 100644
+--- a/core/src/oned/ODDataBarExpandedBitDecoder.cpp
++++ b/core/src/oned/ODDataBarExpandedBitDecoder.cpp
+@@ -8,7 +8,7 @@
+ #include "ODDataBarExpandedBitDecoder.h"
+ 
+ #include "BitArray.h"
+-#include "Error.h"
++#include <zxing-cpp/Error.h>
+ #include "GTIN.h"
+ 
+ namespace ZXing::OneD::DataBar {
+diff --git a/core/src/qrcode/QRCodecMode.cpp b/core/src/qrcode/QRCodecMode.cpp
+index b0e546a0..8653c736 100644
+--- a/core/src/qrcode/QRCodecMode.cpp
++++ b/core/src/qrcode/QRCodecMode.cpp
+@@ -7,7 +7,7 @@
+ 
+ #include "QRCodecMode.h"
+ 
+-#include "Error.h"
++#include <zxing-cpp/Error.h>
+ #include "QRVersion.h"
+ #include "ZXAlgorithms.h"
+ 
+diff --git a/core/src/qrcode/QRVersion.cpp b/core/src/qrcode/QRVersion.cpp
+index 75d89a3b..2b93a141 100644
+--- a/core/src/qrcode/QRVersion.cpp
++++ b/core/src/qrcode/QRVersion.cpp
+@@ -6,7 +6,7 @@
+ */
+ // SPDX-License-Identifier: Apache-2.0
+ 
+-#include "QRVersion.h"
++#include <zxing-cpp/QRVersion.h>
+ 
+ #include "BitHacks.h"
+ #include "BitMatrix.h"
+diff --git a/core/src/qrcode/QRVersion.h b/core/src/qrcode/QRVersion.h
+index f2229465..523a2877 100644
+--- a/core/src/qrcode/QRVersion.h
++++ b/core/src/qrcode/QRVersion.h
+@@ -7,7 +7,7 @@
+ 
+ #pragma once
+ 
+-#include "Point.h"
++#include <zxing-cpp/Point.h>
+ #include "QRECB.h"
+ #include "QRErrorCorrectionLevel.h"
+ #include "ZXAlgorithms.h"
+diff --git a/test/fuzz/fuzzDBEDecoder.cpp b/test/fuzz/fuzzDBEDecoder.cpp
+index 239aab24..c2fb20ad 100644
+--- a/test/fuzz/fuzzDBEDecoder.cpp
++++ b/test/fuzz/fuzzDBEDecoder.cpp
+@@ -7,7 +7,7 @@
+ #include <stddef.h>
+ 
+ #include "BitArray.h"
+-#include "Error.h"
++#include <zxing-cpp/Error.h>
+ #include "oned/ODDataBarExpandedBitDecoder.h"
+ 
+ using namespace ZXing;
+diff --git a/test/unit/ErrorTest.cpp b/test/unit/ErrorTest.cpp
+index 66eb6ac6..704d4d01 100644
+--- a/test/unit/ErrorTest.cpp
++++ b/test/unit/ErrorTest.cpp
+@@ -3,7 +3,7 @@
+ */
+ // SPDX-License-Identifier: Apache-2.0
+ 
+-#include "Error.h"
++#include <zxing-cpp/Error.h>
+ 
+ #include "gtest/gtest.h"
+ 
+diff --git a/test/unit/qrcode/QRModeTest.cpp b/test/unit/qrcode/QRModeTest.cpp
+index fb951175..ce0261f7 100644
+--- a/test/unit/qrcode/QRModeTest.cpp
++++ b/test/unit/qrcode/QRModeTest.cpp
+@@ -6,7 +6,7 @@
+ 
+ #include "qrcode/QRCodecMode.h"
+ #include "qrcode/QRVersion.h"
+-#include "Error.h"
++#include <zxing-cpp/Error.h>
+ 
+ #include "gtest/gtest.h"
+ 
+-- 
+2.39.5 (Apple Git-154)
+

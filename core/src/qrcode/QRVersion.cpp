@@ -6,7 +6,7 @@
 */
 // SPDX-License-Identifier: Apache-2.0
 
-#include "QRVersion.h"
+#include <zxing-cpp/QRVersion.h>
 
 #include "BitHacks.h"
 #include "BitMatrix.h"
